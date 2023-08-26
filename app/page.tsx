@@ -8,7 +8,7 @@ export default function Chat() {
   const [calories, setCalories] = useState("");
   const [protein, setProtein] = useState("");
 
-  const { messages, input, handleInputChange, handleSubmit } = 
+  const { messages, handleInputChange, handleSubmit } = 
   useChat({
     body: {
       recipe: recipe,
@@ -49,17 +49,17 @@ export default function Chat() {
         <input
           className="rounded-md p-2 text-black"
           onChange={onChangeRecipe}
-          placeholder="Say something..."
+          placeholder="What are you craving today?"
         />
         <input
           className="rounded-md p-2 text-black"
           onChange={onChangeCalories}
-          placeholder="Say something..."
+          placeholder="Enter Calorie Limit"
         />
         <input
           className="rounded-md p-2 text-black"
           onChange={onChangeProtein}
-          placeholder="Say something..."
+          placeholder="Enter Protein Goal"
         />
         <button
           className="border-solid border-2 border-white p-2 rounded-md"
