@@ -37,27 +37,20 @@ export default function Chat() {
   };
  
   return (
-    <main className="mx-auto w-full h-screen max-w-lg p-24 flex flex-col">
-      <section className="mb-auto m">
-        {messages.map(m => (
-          <div className="mb-4" key={m.id}>
-            {m.content}
-          </div>
-        ))}
-      </section>
-      <form className="flex space-x-4" onSubmit={onSubmit}>
+    <main className="mx-auto w-full h-screen max-w-lg flex flex-col">
+      <form className="my-10 flex flex-col" onSubmit={onSubmit}>
         <input
-          className="rounded-md p-2 text-black"
+          className="rounded-md p-2 m-2 text-black"
           onChange={onChangeRecipe}
           placeholder="What are you craving today?"
         />
         <input
-          className="rounded-md p-2 text-black"
+          className="rounded-md p-2 m-2 text-black"
           onChange={onChangeCalories}
           placeholder="Enter Calorie Limit"
         />
         <input
-          className="rounded-md p-2 text-black"
+          className="rounded-md p-2 m-2 text-black"
           onChange={onChangeProtein}
           placeholder="Enter Protein Goal"
         />
@@ -68,6 +61,13 @@ export default function Chat() {
           Send
         </button>
       </form>
+      <section className="mb-auto m">
+        {messages.map(m => (
+          <div key={m.id}>
+            {m.content}
+          </div>
+        ))}
+      </section>
     </main>
   )
 }

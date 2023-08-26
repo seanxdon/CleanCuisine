@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     messages : [
       {
         role: "user",
-        content: `Create me a ${recipe} recipe under ${calories} calories with ${protein} grams of protein. Only give me the macro nutirents for each ingredient`
+        content: `Please provide me a recipe for ${recipe} that has a maximum of ${calories} calories and a minimum of ${protein} grams of protein. Include the list of ingredients and their macro nutrients in markdown format, instructions are not needed.`
       }
     ]
   })
