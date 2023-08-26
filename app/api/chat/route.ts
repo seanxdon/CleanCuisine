@@ -11,7 +11,7 @@ export const runtime = 'edge'
  
 export async function POST(req: Request) {
   // Extract the `messages` from the body of the request
-  const { recipe } = await req.json()
+  const { recipe, calories, protein } = await req.json()
  
   // Ask OpenAI for a streaming chat completion given the prompt
   const response = await openai.chat.completions.create({
@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     messages : [
       {
         role: "user",
-        content: `Create me a ${recipe} recipe under 500 calories with 30 grams of protein. Only give me the macro nutirents for each ingredient`
+        content: `Create me a ${recipe} recipe under ${calories} calories with ${protein} grams of protein. Only give me the macro nutirents for each ingredient`
       }
     ]
   })

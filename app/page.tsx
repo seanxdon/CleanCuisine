@@ -5,17 +5,34 @@ import { useState } from 'react';
  
 export default function Chat() {
   const [recipe, setRecipe] = useState("");
+  const [calories, setCalories] = useState("");
+  const [protein, setProtein] = useState("");
 
   const { messages, input, handleInputChange, handleSubmit } = 
   useChat({
     body: {
-      recipe: recipe
+      recipe: recipe,
+      calories: calories,
+      protein: protein,
     }
   })
 
+  const onChangeRecipe = (e: any) => {
+    setRecipe(e.target.value)
+    handleInputChange(e)
+  }
+
+  const onChangeCalories = (e: any) => {
+    setCalories(e.target.value);
+    handleInputChange(e)
+  }
+
+  const onChangeProtein = (e: any) => {
+    setProtein(e.target.value);
+    handleInputChange(e)
+  }
+  
   const onSubmit = (e: any) => {
-    setRecipe(input);
-    console.log(recipe)
     handleSubmit(e);
   };
  
@@ -31,8 +48,17 @@ export default function Chat() {
       <form className="flex space-x-4" onSubmit={onSubmit}>
         <input
           className="rounded-md p-2 text-black"
-          value={input}
-          onChange={handleInputChange}
+          onChange={onChangeRecipe}
+          placeholder="Say something..."
+        />
+        <input
+          className="rounded-md p-2 text-black"
+          onChange={onChangeCalories}
+          placeholder="Say something..."
+        />
+        <input
+          className="rounded-md p-2 text-black"
+          onChange={onChangeProtein}
           placeholder="Say something..."
         />
         <button
