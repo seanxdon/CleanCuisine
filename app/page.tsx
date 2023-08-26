@@ -38,7 +38,7 @@ export default function Chat() {
  
   return (
     <div className="bg-[url('./assets/clean-cuisine-background.png')] ">
-      <main className="mx-auto w-full h-screen max-w-lg flex flex-col">
+      <main className="mx-auto w-full h-screen max-w-lg flex flex-col p-2">
         <form className="my-10 flex flex-col" onSubmit={onSubmit}>
           <input
             className="rounded-md p-2 m-2 text-black"
@@ -56,7 +56,7 @@ export default function Chat() {
             placeholder="Enter Protein Goal"
           />
           <button
-            className="border-solid border-2 border-white p-2 rounded-md"
+            className="border-solid border-2 border-white p-2 m-2 rounded-md"
             type="submit"
           >
             Send
