@@ -11,13 +11,18 @@ export const runtime = 'edge'
  
 export async function POST(req: Request) {
   // Extract the `messages` from the body of the request
-  const { messages } = await req.json()
+  const { recipe, calories, protein } = await req.json()
  
   // Ask OpenAI for a streaming chat completion given the prompt
   const response = await openai.chat.completions.create({
     model: 'gpt-3.5-turbo',
     stream: true,
-    messages
+    messages : [
+      {
+        role: "user",
+        content: `Create me a ${recipe} recipe under ${calories} calories with ${protein} grams of protein. Only give me the macro nutirents for each ingredient`
+      }
+    ]
   })
   // Convert the response into a friendly text-stream
   const stream = OpenAIStream(response)
