@@ -2,13 +2,14 @@
  
 import { useChat } from 'ai/react'
 import { useState } from 'react';
+import './styles/global.css';
  
 export default function Chat() {
   const [recipe, setRecipe] = useState("");
   const [calories, setCalories] = useState("");
   const [protein, setProtein] = useState("");
 
-  const { messages, handleInputChange, handleSubmit } = 
+  const { messages , handleInputChange, handleSubmit } = 
   useChat({
     body: {
       recipe: recipe,
@@ -56,15 +57,15 @@ export default function Chat() {
             placeholder="Enter Protein Goal"
           />
           <button
-            className="border-solid border-2 border-none bg-yellow-400 p-2 m-2 rounded-md"
+            className="border-none bg-yellow-400 p-2 m-2 rounded-md"
             type="submit"
           >
             Send
           </button>
         </form>
-        <section className="mb-auto m">
+        <section className=" mb-auto m">
           {messages.map(m => (
-            <div key={m.id}>
+            <div className="res bg-white text-black rounded-md p-5 m-2 " key={m.id}>
               {m.content}
             </div>
           ))}
