@@ -1,22 +1,22 @@
 'use client'
  
 import { useChat } from 'ai/react'
-import { useState } from 'react'
+import { useState } from 'react';
  
 export default function Chat() {
-  const [bio, setBio] = useState('');
+  const [recipe, setRecipe] = useState("");
 
-  const { input, handleInputChange, handleSubmit, messages } =
-    useChat({
-      body: {
-        bio,
-      },
-    });
+  const { messages, input, handleInputChange, handleSubmit } = 
+  useChat({
+    body: {
+      recipe: recipe
+    }
+  })
 
   const onSubmit = (e: any) => {
-    setBio(input);
+    setRecipe(input);
+    console.log(recipe)
     handleSubmit(e);
-    console.log(input)
   };
  
   return (
@@ -31,11 +31,9 @@ export default function Chat() {
       <form className="flex space-x-4" onSubmit={onSubmit}>
         <input
           className="rounded-md p-2 text-black"
-          id="recipe"
-          name="recipe"
-          onChange={handleInputChange}
           value={input}
-          placeholder="What are you craving today"
+          onChange={handleInputChange}
+          placeholder="Say something..."
         />
         <button
           className="border-solid border-2 border-white p-2 rounded-md"
