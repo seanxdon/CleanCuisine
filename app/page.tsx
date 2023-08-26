@@ -56,7 +56,7 @@ export default function Chat() {
             placeholder="Enter Protein Goal"
           />
           <button
-            className="border-solid border-2 border-white p-2 m-2 rounded-md"
+            className="border-solid border-2 border-none bg-yellow-400 p-2 m-2 rounded-md"
             type="submit"
           >
             Send
