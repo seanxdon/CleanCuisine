@@ -37,37 +37,39 @@ export default function Chat() {
   };
  
   return (
-    <main className="mx-auto w-full h-screen max-w-lg flex flex-col">
-      <form className="my-10 flex flex-col" onSubmit={onSubmit}>
-        <input
-          className="rounded-md p-2 m-2 text-black"
-          onChange={onChangeRecipe}
-          placeholder="What are you craving today?"
-        />
-        <input
-          className="rounded-md p-2 m-2 text-black"
-          onChange={onChangeCalories}
-          placeholder="Enter Calorie Limit"
-        />
-        <input
-          className="rounded-md p-2 m-2 text-black"
-          onChange={onChangeProtein}
-          placeholder="Enter Protein Goal"
-        />
-        <button
-          className="border-solid border-2 border-white p-2 rounded-md"
-          type="submit"
-        >
-          Send
-        </button>
-      </form>
-      <section className="mb-auto m">
-        {messages.map(m => (
-          <div key={m.id}>
-            {m.content}
-          </div>
-        ))}
-      </section>
-    </main>
+    <div className="bg-[url('./assets/clean-cuisine-background.png')] ">
+      <main className="mx-auto w-full h-screen max-w-lg flex flex-col">
+        <form className="my-10 flex flex-col" onSubmit={onSubmit}>
+          <input
+            className="rounded-md p-2 m-2 text-black"
+            onChange={onChangeRecipe}
+            placeholder="What are you craving today?"
+          />
+          <input
+            className="rounded-md p-2 m-2 text-black"
+            onChange={onChangeCalories}
+            placeholder="Enter Calorie Limit"
+          />
+          <input
+            className="rounded-md p-2 m-2 text-black"
+            onChange={onChangeProtein}
+            placeholder="Enter Protein Goal"
+          />
+          <button
+            className="border-solid border-2 border-white p-2 rounded-md"
+            type="submit"
+          >
+            Send
+          </button>
+        </form>
+        <section className="mb-auto m">
+          {messages.map(m => (
+            <div key={m.id}>
+              {m.content}
+            </div>
+          ))}
+        </section>
+      </main>
+    </div>
   )
 }
