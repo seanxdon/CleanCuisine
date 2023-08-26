@@ -24,7 +24,6 @@ export default function Chat() {
       <section className="mb-auto m">
         {messages.map(m => (
           <div className="mb-4" key={m.id}>
-            {m.role === 'user' ? 'User: ' : 'AI: '}
             {m.content}
           </div>
         ))}
