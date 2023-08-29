@@ -1,5 +1,5 @@
 # CleanCuisine.ai
-Live Demo: https://macros-ai-one.vercel.app/
+Live Demo: https://cleancuisine.vercel.app/
 
 *In Development*
 
