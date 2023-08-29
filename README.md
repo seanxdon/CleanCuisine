@@ -5,8 +5,6 @@ Live Demo: https://macros-ai-one.vercel.app/
 
 Tech Stack: Next.js | Tailwind | Vercel AI SDK
 
-API: gpt-3.5-turbo 
-
 
 <b>Recipe Generator to fit your macro goals! <b>
 
