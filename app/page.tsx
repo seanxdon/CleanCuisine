@@ -57,14 +57,14 @@ export default function Chat() {
             type="number"
             max={9999}
             onChange={onChangeCalories}
-            placeholder="Enter Calories"
+            placeholder="Enter Calories "
           />
           <input
             className="rounded-md p-2 m-2 text-black"
             type="number"
             max={999}
             onChange={onChangeProtein}
-            placeholder="Enter Protein"
+            placeholder="Enter Protein (g)"
           />
           <button
             className="border-none bg-yellow-400 hover:bg-yellow-500 p-2 m-2 rounded-md"
