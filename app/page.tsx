@@ -41,7 +41,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="bg-[url('./assets/clean-cuisine-background.png')] bg-repeat">
+    <div className="bg-repeat bg-[url('./assets/clean-cuisine-background.png')] ">
     <Header />
       <main className="mx-auto w-full h-screen max-w-lg flex flex-col p-2">
         <form className="my-10 flex flex-col" onSubmit={onSubmit}>
