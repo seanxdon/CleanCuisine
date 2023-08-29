@@ -1,4 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CleanCuisine.ai
+Live Demo: https://macros-ai-one.vercel.app/
+
+*In Development*
+
+Tech Stack: Next.js | Tailwind | Vercel AI SDK
+
+API: gpt-3.5-turbo 
+
+
+<b>Recipe Generator to fit your macro goals! <b>
+
+1. Enter the desired food you have been craving
+2. Enter calorie limit
+3. Enter protein goal
+4. Enjoy your healthy and delicious recipe! 🍕
 
 ## Getting Started
 
