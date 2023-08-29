@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     messages : [
       {
         role: "user",
-        content: `Please provide me a healthy recipe for ${recipe} that has a maximum of ${calories} calories and a minimum of ${protein} grams of protein. Include the list of ingredients and their macro nutrients in markdown format, instructions are not needed. Please do not go over calories under any exceptions. If the recipe is not possible, prompt the user to add more calories. If a recipe is considered to have low protein, add protein powder as a supplement to finish the recipe and fit within the calorie limit`
+        content: `Please provide me a healthy recipe for ${recipe} that has a maximum of ${calories} calories and a minimum of ${protein} grams of protein. Include the list of ingredients and their macro nutrients in markdown format, instructions are not needed. Please do not go over calories under any exceptions. If the recipe is not possible, prompt the user to add more calories.`
       }
     ]
   })

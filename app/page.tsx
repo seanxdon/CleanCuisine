@@ -4,7 +4,6 @@ import { useChat } from 'ai/react'
 import { useState } from 'react';
 import './styles/global.css';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
  
 export default function Chat() {
   const [recipe, setRecipe] = useState("");
@@ -37,7 +36,6 @@ export default function Chat() {
   }
   
   const onSubmit = (e: any) => {
-    console.log("Request Successful");
     handleSubmit(e);
     setDisabled(!disabled);
   };
@@ -49,40 +47,41 @@ export default function Chat() {
         <form className="my-10 flex flex-col" onSubmit={onSubmit}>
           <input
             className="rounded-md p-2 m-2 text-black"
+            type="text"
+            maxLength={100}
             onChange={onChangeRecipe}
             placeholder="What are you craving today?"
-            disabled={disabled}
           />
           <input
             className="rounded-md p-2 m-2 text-black"
+            type="number"
+            max={9999}
             onChange={onChangeCalories}
-            placeholder="Enter Calorie Limit"
-            disabled={disabled}
+            placeholder="Enter Calories"
           />
           <input
             className="rounded-md p-2 m-2 text-black"
+            type="number"
+            max={999}
             onChange={onChangeProtein}
-            placeholder="Enter Protein Goal"
-            disabled={disabled}
+            placeholder="Enter Protein"
           />
           <button
-            className="border-none bg-yellow-400 p-2 m-2 rounded-md"
+            className="border-none bg-yellow-400 hover:bg-yellow-500 p-2 m-2 rounded-md"
             type="submit"
-            disabled={disabled}
           >
             Send
           </button>
         </form>
         <section className="mb-auto m">
           {messages.map(m => (
-            <div className="res mx-100 bg-white text-black rounded-md p-5 m-2 " key={m.id}>
+            <div className="res md:max-h-screen bg-white text-black rounded-md p-5 m-2 " key={m.id}>
               {m.content}
             </div>
           ))
           }
         </section>
       </main>
-      <Footer />
     </div>
   )
 }
