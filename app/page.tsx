@@ -9,7 +9,6 @@ export default function Chat() {
   const [recipe, setRecipe] = useState("");
   const [calories, setCalories] = useState("");
   const [protein, setProtein] = useState("");
-  const [disabled, setDisabled] = useState(false);
 
   const { messages , handleInputChange, handleSubmit } = 
   useChat({
@@ -37,8 +36,11 @@ export default function Chat() {
   
   const onSubmit = (e: any) => {
     handleSubmit(e);
-    setDisabled(!disabled);
   };
+
+  const lastMessage = messages[messages.length - 1];
+  const generatedRecipes = lastMessage?.role === "assistant" ? lastMessage.content : null;
+
 
   return (
     <div className="bg-repeat bg-[url('./assets/clean-cuisine-background.png')] ">
@@ -74,12 +76,25 @@ export default function Chat() {
           </button>
         </form>
         <section className="mb-auto m">
-          {messages.map(m => (
-            <div className="res md:max-h-screen bg-white text-black rounded-md p-5 m-2 " key={m.id}>
-              {m.content}
+        {generatedRecipes && (
+          <>
+            <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
+              {generatedRecipes
+                .substring(generatedRecipes.indexOf('1') + 0)
+                .split('2.')
+                .map((recipe) => {
+                  return (
+                    <div
+                      className="bg-white text-black rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
+                      key={recipe}
+                    >
+                      <p>{recipe}</p>
+                    </div>
+                  );
+                })}
             </div>
-          ))
-          }
+          </>
+          )}
         </section>
       </main>
     </div>
